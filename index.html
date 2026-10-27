@@ -642,7 +642,7 @@
   .hero .scroll-cue span{font-size:9px;letter-spacing:.16em;}
   @media(max-width:968px){
     .hero{padding:150px 0 110px;}
-    .hero .container{padding:0 36px;}
+    .hero .container{grid-template-columns:minmax(0,1fr);gap:0;padding:0 36px;}
     .hero h1{font-size:clamp(60px,10vw,92px);}
     .hero-feature-caption{right:28px;bottom:30px;}
   }
@@ -665,7 +665,7 @@
   }
   @media(max-width:360px){
     .hero .container{padding:0 18px;}
-    .hero h1{font-size:52px;}
+    .hero h1{font-size:clamp(40px,14.4vw,52px);}
     .hero-ctas .btn{font-size:10px;padding-inline:7px;}
   }    /* Ambient motion lighting without an autoplaying hero video. */
   .hero-ambient{position:absolute;inset:0;z-index:0;overflow:hidden;isolation:isolate;pointer-events:none;background:radial-gradient(ellipse at 72% 34%,rgba(201,143,90,.12),transparent 42%),linear-gradient(135deg,#171512 8%,#241c16 54%,#171512 100%);}
@@ -673,7 +673,7 @@
   .hero-ambient::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(23,21,18,.25),rgba(23,21,18,.02) 66%),linear-gradient(0deg,rgba(23,21,18,.26),transparent 62%),linear-gradient(118deg,transparent 43%,rgba(247,242,232,.055) 50%,transparent 57%);background-size:100% 100%,100% 100%,220% 220%;background-position:50% 50%,50% 50%,-110% -90%;animation:heroLightSweep 30s ease-in-out infinite;}
   @keyframes heroGlowFloat{0%{transform:translate3d(-4%,-2%,0) scale(.94);opacity:.56;}50%{transform:translate3d(1%,1%,0) scale(1.04);opacity:.82;}100%{transform:translate3d(4%,-1%,0) scale(.98);opacity:.65;}}
   @keyframes heroLightSweep{0%,22%{background-position:50% 50%,50% 50%,-110% -90%;}82%,100%{background-position:50% 50%,50% 50%,110% 90%;}}
-  .hero h1{font-family:"Inter",sans-serif;font-size:clamp(64px,8vw,108px);font-weight:700;letter-spacing:-.075em;line-height:.94;}
+  .hero h1{font-family:"Inter",sans-serif;font-size:clamp(64px,7.3vw,96px);font-weight:700;letter-spacing:-.075em;line-height:.94;}
   .hero h1 em{font-style:normal;font-weight:700;color:var(--accent-2);}
   @media(max-width:640px){.hero h1{font-size:clamp(40px,11vw,62px);}}
   @media(prefers-reduced-motion:reduce){.hero-ambient::before,.hero-ambient::after{animation:none!important;}}  /* Simple workflow section replaces testimonial collection until real reviews are available. */
@@ -732,6 +732,7 @@
     .work-thumb.has-video::after{display:none;}
   }
   @media(prefers-reduced-motion:reduce){.work-timeline__fill,.work-timeline__marker::before,.work-thumb__preview{transition:none!important;}}
+  /* Final hero composition: an abstract editing study, with no autoplaying media. */
 </style>
 </head>
 <body>
