@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nour — Video Editor &amp; Graphic Designer</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; img-src 'self' data: https://github.com https://release-assets.githubusercontent.com; media-src 'self' blob: https://github.com https://release-assets.githubusercontent.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'sha256-GO90rTOomNhiq694fvpVc/unuIfWdmlmN2KwRJmFZlA=' 'sha384-hCAXRql7d0PNQAW7heqf5Gj++hWO9VVVr4FtuTVLYuvMBWgKjsqLns9e0RA3LByX'; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; img-src 'self' data: https://github.com https://release-assets.githubusercontent.com; media-src 'self' blob: https://github.com https://release-assets.githubusercontent.com; font-src 'self' https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'sha256-Pjyf8UZupNdD13AhUYP9P+9HbU9JRkzm26yyjbMEV/c=' 'sha384-hCAXRql7d0PNQAW7heqf5Gj++hWO9VVVr4FtuTVLYuvMBWgKjsqLns9e0RA3LByX'; connect-src 'self' https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="description" content="Nour is a video editor and graphic designer based in Egypt. Explore podcast edits, cinematic work, motion graphics, and Blender product visualization.">
 <meta property="og:type" content="website">
@@ -551,7 +551,7 @@
   .work-photo{cursor:default;}
   .work-photo:focus-visible{outline:3px solid var(--accent);outline-offset:-3px;}
   .lightbox img{cursor:default;}
-  img,video{-webkit-user-drag:none;user-select:none;-webkit-user-select:none;}
+
 
 /* Keep project cards side by side on phones while preserving room for the content. */
 @media(max-width:640px){
@@ -742,7 +742,7 @@
 
 <div class="video-modal" id="videoModal" role="dialog" aria-label="Video player">
   <span class="lightbox-close" id="videoClose" aria-label="Close video">&times;</span>
-  <video id="videoPlayer" controls controlslist="nodownload noremoteplayback" disablepictureinpicture playsinline preload="metadata"></video>
+  <video id="videoPlayer" controls playsinline preload="metadata"></video>
   <p class="video-error" id="videoError">The video is still loading or could not be found. Wait a moment and try again.</p>
 </div>
 
@@ -1618,15 +1618,6 @@
     };
     window.setTimeout(typeNextCharacter, 240);
   }
-
-  // Discourage casual saving of visible media; public assets remain accessible by URL.
-  document.querySelectorAll("img, video").forEach(media => media.setAttribute("draggable", "false"));
-  document.addEventListener("dragstart", event => {
-    if(event.target instanceof Element && event.target.closest("img, video")) event.preventDefault();
-  });
-  document.addEventListener("contextmenu", event => {
-    if(event.target instanceof Element && event.target.closest("img, video")) event.preventDefault();
-  });
 </script>
 
 </body>
