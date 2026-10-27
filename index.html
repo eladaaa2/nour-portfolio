@@ -700,9 +700,9 @@
 .work-thumb[data-fit="blur-contain"]>img.work-thumb__backdrop{inset:-18px;width:calc(100% + 36px);height:calc(100% + 36px);object-fit:cover!important;filter:blur(22px) brightness(.88);opacity:.82;transform:scale(1.04);z-index:0;pointer-events:none;}
 .work-thumb[data-fit="blur-contain"]>img:not(.work-thumb__backdrop){object-fit:contain!important;object-position:center!important;z-index:1;transform:none!important;}
 .work-card:hover .work-thumb[data-fit="blur-contain"]>img.work-thumb__backdrop{transform:scale(1.12);}
-.work-thumb[data-fit="blur-contain"] .work-thumb__preview{object-fit:contain!important;object-position:center!important;background:transparent!important;z-index:2;}
+.work-thumb[data-fit="blur-contain"] .work-thumb__preview{position:absolute!important;inset:0!important;display:block!important;width:100%!important;height:100%!important;object-fit:contain!important;object-position:center!important;background:transparent!important;filter:none!important;mix-blend-mode:normal!important;opacity:1!important;z-index:10!important;}
 .work-thumb[data-fit="blur-contain"].is-previewing>img:not(.work-thumb__backdrop){opacity:0;}
-.work-thumb[data-fit="blur-contain"].is-previewing>img.work-thumb__backdrop{opacity:.88!important;}
+.work-thumb[data-fit="blur-contain"].is-previewing>img.work-thumb__backdrop{opacity:0!important;visibility:hidden!important;}
   .work-thumb.has-video::after{content:"PREVIEW";position:absolute;z-index:3;right:13px;bottom:12px;padding:5px 8px;border:1px solid rgba(247,242,232,.28);border-radius:999px;background:rgba(23,21,18,.62);color:var(--paper-text);font:500 9px 'IBM Plex Mono',monospace;letter-spacing:.12em;opacity:0;transform:translateY(4px);transition:opacity .25s ease,transform .25s var(--ease);pointer-events:none;}
   .work-thumb.has-video.is-previewing::after{opacity:1;transform:translateY(0);}
   .hero-ambient::before{background:radial-gradient(ellipse 38% 42% at var(--light-x,76%) var(--light-y,35%),rgba(201,143,90,.34),transparent 72%),radial-gradient(ellipse 30% 34% at 45% 72%,rgba(227,188,144,.20),transparent 74%),radial-gradient(ellipse 22% 30% at 91% 80%,rgba(139,90,53,.19),transparent 74%);}
